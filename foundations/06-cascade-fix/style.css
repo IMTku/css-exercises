@@ -1,14 +1,19 @@
+/* .small-para and .para have conflict,and they have same specificity,to make the second line smaller */
+
+/* we can change the order of them, */
+
+/* this file change .small-para to .para.small-para,adding the numbers of selector to make the small declaration more specific */
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.para,
-.small-para {
+.para
+ {
   color: hsl(0, 0%, 0%);
   font-weight: 800;
 }
 
-.small-para {
+.para.small-para {
   font-size: 14px;
   font-weight: 800;
 }
@@ -16,8 +21,19 @@ body {
 .para {
   font-size: 22px;
 }
+/* to make the button with confirm green, */
 
-.confirm {
+/* simply move the .confirm rule below the .button rule, */
+
+/* or using the ID selector instead, since it has a higher specificity than the .button selector.
+#confirm-button {
+  background: green;
+  color: white;
+  font-weight: bold;
+} */
+
+ /* or to use the .button.confirm selector without moving it like the code below */
+.button.confirm {
   background: green;
   color: white;
   font-weight: bold;
@@ -28,8 +44,35 @@ body {
   color: rgb(0, 0, 0);
   font-size: 20px;
 }
-
+/* the original one 
 .child {
+  color: rgb(0, 0, 0);
+  font-weight: 800;
+  font-size: 14px;
+}
+
+div.text {
+  color: rgb(0, 0, 0);
+  font-size: 22px;
+  font-weight: 100;
+}
+to make the child-text more specific, we can create a descendant combinator
+.text .child {
+    color: rgb(0, 0, 0);
+    font-weight: 800;
+    font-size: 14px;
+  }
+*/
+
+/* or create a 
+div .child {
+  color: rgb(0, 0, 0);
+  font-weight: 800;
+  font-size: 14px;
+} and move it below the div.text*/
+
+/* or create a chaining selector like the one below */
+.text.child {
   color: rgb(0, 0, 0);
   font-weight: 800;
   font-size: 14px;
