@@ -1,16 +1,71 @@
+/* # A very common website feature
+
+The goal of this exercise is to recreate a section that is found on many informational websites.
+
+For this one you will need to edit the HTML a little bit too. We can't be making things _too_ easy for you. You'll want to add containers around the various elements so that you can flex them. Good luck!
+
+## Desired outcome
+
+![desired outcome](./desired-outcome.png)
+
+### Self Check
+
+- All items are centered on the page (horizontally, not vertically).
+- The title is centered on the page.
+- There is 32px between the title and the 'items.'
+- There is 52px between each item.
+- The items are arranged horizontally on the page.
+- The items are only 200px wide and the text wraps.  
+- The item text is centered. */
+
+
+/* 1.do not overdo flexbox
+2.to make the title centered,text-align is enough
+3.when to use gap or margin:"There is 32px between the title and the 'items.'"
+4."The items are only 200px wide and the text wraps".In this case max-width should be set on items */
+
+/* ???HOW TO ACIEVE " the text wraps. " "The item text is centered",THE LATTER ONE MAYBE text-align? */
 body {
   font-family: 'Courier New', Courier, monospace;
+  text-align: center;/* The title is centered on the page.
+  /* display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap:52px; */
 }
 
 img {
   width: 100px;
   height: 100px;
+  /* gap:52px; */
+
 }
 
 .title {
   font-size: 36px;
   font-weight: 900;
+  /* display: flex;
+  align-self: center; */
+  /* gap:32px; */
+  margin-bottom: 32px;/*There is 32px between the title and the 'items.'*/
 }
+.container {
+  display: flex;
+  justify-content: center;
+  /* not space-around */
+  gap:52px;
+  /* width: 200px; */
+  /* "The items are only 200px wide and the text wraps."this achieves on .info
+  and is max-width */
+}
+.info{
+  max-width: 200px;/* "The items are only 200px wide and the text wraps."*/
+  /* display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+*/}
+
 
 /* do not edit this footer */
 .footer {
