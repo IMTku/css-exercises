@@ -27,3 +27,58 @@ body {
   box-shadow: 2px 4px 16px rgba(0,0,0,.06);
   border-radius: 4px;
 }
+/* SOLUTION */
+.header{
+  font-size: 32px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;/* not padding: 16px; */
+}
+body{
+  display: flex;
+  flex-direction: column;
+}
+.footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sidebar{
+  
+  padding: 16px;
+  flex-shrink:0;
+}
+a{
+  text-decoration: none;
+  font-size:24px; /* not just size:24px */
+  color:white;
+}
+ul{
+  /* display: flex;
+  flex-direction: column;
+  gap:16px; */
+  list-style: none;
+  margin:0;
+  padding:0;
+}
+/* I miss it */
+li {
+  margin-bottom: 16px;
+}
+.card {
+  padding: 16px;
+  width: 300px;
+ 
+}
+.grid{
+  display: flex;
+  padding:48px;
+  gap:32px;/* I miss it */
+  flex-wrap: wrap;
+}
+.container{
+  display: flex;
+  flex:1;
+
+}
